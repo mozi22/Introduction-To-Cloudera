@@ -4,8 +4,8 @@ import org.apache.hadoop.conf.Configured;
 import org.apache.hadoop.util.Tool;
 import org.apache.hadoop.util.ToolRunner;
 
-import mappers.CountMapper;
-import reducers.CountReducer;
+import mappers.WordsSortMapper;
+import reducers.WordsSortReducer;
 
 import org.apache.hadoop.mapreduce.Job;
 import org.apache.hadoop.mapreduce.lib.input.FileInputFormat;
@@ -34,13 +34,13 @@ public class RowCount extends Configured implements Tool{
 		
 		FileInputFormat.setInputPaths(job, new Path(args[0]));
 		
-		job.setMapperClass(CountMapper.class);
-		job.setMapOutputKeyClass(Text.class);
-		job.setMapOutputValueClass(IntWritable.class);
+		job.setMapperClass(WordsSortMapper.class);
+		job.setMapOutputKeyClass(IntWritable.class);
+		job.setMapOutputValueClass(Text.class);
 		
-		job.setReducerClass(CountReducer.class);
-		job.setOutputKeyClass(Text.class);
-		job.setOutputValueClass(IntWritable.class);
+		job.setReducerClass(WordsSortReducer.class);
+		job.setOutputKeyClass(IntWritable.class);
+		job.setOutputValueClass(Text.class);
 		
 		FileOutputFormat.setOutputPath(job, new Path(args[1]));
 		
