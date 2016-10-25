@@ -9,7 +9,8 @@ import java.io.IOException;
 
 public class CountReducer extends Reducer<Text,IntWritable,NullWritable,IntWritable>{
 
-	public void Reduce(Text key,Iterable<IntWritable> records,Context context) 
+	@Override
+	public void reduce(Text key,Iterable<IntWritable> records,Context context) 
 					throws IOException, InterruptedException{
 		int sum = 0;
 		
