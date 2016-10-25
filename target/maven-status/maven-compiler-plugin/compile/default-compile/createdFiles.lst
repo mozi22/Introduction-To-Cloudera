@@ -1,0 +1,4 @@
+msp_exercise/exercise/App.class
+mappers/CountMapper.class
+reducers/CountReducer.class
+msp_exercise/exercise/RowCount.class
