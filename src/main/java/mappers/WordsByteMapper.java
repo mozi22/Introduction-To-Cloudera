@@ -1,9 +1,6 @@
 package mappers;
 
 import java.io.IOException;
-import java.util.HashMap;
-import java.util.Map;
-import java.util.Set;
 import java.util.StringTokenizer;
 
 import org.apache.hadoop.io.IntWritable;
@@ -11,7 +8,7 @@ import org.apache.hadoop.io.LongWritable;
 import org.apache.hadoop.io.Text;
 import org.apache.hadoop.mapreduce.Mapper;
 
-public class WordsSortMapper  extends Mapper<LongWritable,Text,IntWritable,Text>{
+public class WordsByteMapper   extends Mapper<LongWritable,Text,IntWritable,Text>{
 
 	public void map(LongWritable key,Text record,Context context)
 						throws IOException, InterruptedException{
