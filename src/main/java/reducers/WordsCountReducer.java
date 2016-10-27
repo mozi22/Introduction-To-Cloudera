@@ -21,7 +21,7 @@ public class WordsCountReducer extends Reducer<IntWritable,Text,NullWritable,Tex
 			line = "("+record.toString();
 		}
 		
-		line = line + ","+String.valueOf(sum);
+		line = line + ","+String.valueOf(sum)+")";
 		
 		context.write(NullWritable.get(), new Text(line));
 		
