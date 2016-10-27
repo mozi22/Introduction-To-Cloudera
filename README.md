@@ -59,3 +59,5 @@ Following are the commands I needed to work with `hdfs` and `local file system` 
    - The first path is to the twain file which should be present in `/user/cloudera`as mentioned in step 1 and the `/user/cloudera/wordcount` is the second argument which we are sending. This will be the output folder where our results will be saved in a file after our job completes.
 5. Once the result is saved in your output path file which will be named `part-r-00000`. You can view it using command 6. 
 6. You can copy it back from hdfs to `cloudera local file system` using command 9 and rename the strange `part-r-00000` filename using command 10.
+
+**Note: The driver file RowCount has the 3rd task uncommented by default. You can comment any two task to export a jar file using the step 2 and follow steps from there.**
