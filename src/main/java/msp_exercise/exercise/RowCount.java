@@ -40,7 +40,7 @@ public class RowCount extends Configured implements Tool{
 			
 			/*
 			job.setMapperClass(WordsSortMapper.class);
-			job.setMapOutputKeyClass(Text.class);
+			job.setMapOutputKeyClass(IntWritable.class);
 			job.setMapOutputValueClass(Text.class);
 			
 			job.setReducerClass(WordsSortReducer.class);
@@ -52,7 +52,7 @@ public class RowCount extends Configured implements Tool{
 
 			/*
 			job.setMapperClass(WordsSortMapper.class);
-			job.setMapOutputKeyClass(Text.class);
+			job.setMapOutputKeyClass(IntWritable.class);
 			job.setMapOutputValueClass(Text.class);
 			
 			job.setReducerClass(WordsCountReducer.class);
