@@ -3,14 +3,8 @@ package reducers;
 import java.io.BufferedReader;
 import java.io.IOException;
 import java.io.InputStreamReader;
-import java.util.ArrayList;
-
-import org.apache.hadoop.conf.Configuration;
-
-import org.apache.hadoop.fs.FSDataInputStream;
 import org.apache.hadoop.fs.FileSystem;
 import org.apache.hadoop.fs.Path;
-import org.apache.hadoop.io.IntWritable;
 import org.apache.hadoop.io.NullWritable;
 import org.apache.hadoop.io.Text;
 import org.apache.hadoop.mapreduce.Reducer;
@@ -41,7 +35,6 @@ public class WordsByteReducer extends Reducer<Text,Text,NullWritable,Text>{
 			line = line + record + ",";
 		}
 
-		
 		context.write(NullWritable.get(),new Text(line));
 
 	}
