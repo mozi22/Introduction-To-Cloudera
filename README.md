@@ -61,3 +61,5 @@ Following are the commands I needed to work with `hdfs` and `local file system` 
 6. You can copy it back from hdfs to `cloudera local file system` using command 9 and rename the strange `part-r-00000` filename using command 10.
 
 **Note: The driver file RowCount has the 3rd task uncommented by default. You can comment any two task to export a jar file using the step 2 and follow steps from there.**
+
+For further help: Follow [these video tutorials](https://www.youtube.com/watch?v=nPRY-qGaAMs&list=PLf0swTFhTI8rnNRnVz6n-f1d3ZCDtgqRq).
