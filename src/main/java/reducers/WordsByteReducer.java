@@ -24,6 +24,7 @@ public class WordsByteReducer extends Reducer<Text,Text,NullWritable,Text>{
 		 *  of the lines in which they appeared.
 		 *  
 		 */
+
 		boolean exists = compareStopWords(context,key.toString());
 		
 		if(exists){

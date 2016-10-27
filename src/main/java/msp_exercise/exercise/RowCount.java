@@ -6,6 +6,9 @@ import org.apache.hadoop.util.ToolRunner;
 
 import mappers.WordsByteMapper;
 import reducers.WordsByteReducer;
+import mappers.WordsSortMapper;
+import reducers.WordsSortReducer;
+import reducers.WordsCountReducer;
 
 import org.apache.hadoop.mapreduce.Job;
 import org.apache.hadoop.mapreduce.lib.input.FileInputFormat;
@@ -32,7 +35,32 @@ public class RowCount extends Configured implements Tool{
 			job.setJarByClass(getClass());
 			
 			FileInputFormat.setInputPaths(job, new Path(args[0]));
+
+			// Task 1 - Word Sort
 			
+			/*
+			job.setMapperClass(WordsSortMapper.class);
+			job.setMapOutputKeyClass(Text.class);
+			job.setMapOutputValueClass(Text.class);
+			
+			job.setReducerClass(WordsSortReducer.class);
+			job.setOutputKeyClass(NullWritable.class);
+			job.setOutputValueClass(Text.class);
+			*/
+			
+			// Task 2 - Word Count
+
+			/*
+			job.setMapperClass(WordsSortMapper.class);
+			job.setMapOutputKeyClass(Text.class);
+			job.setMapOutputValueClass(Text.class);
+			
+			job.setReducerClass(WordsCountReducer.class);
+			job.setOutputKeyClass(NullWritable.class);
+			job.setOutputValueClass(Text.class);
+			*/
+
+			// Task 3 - Byte Task
 			job.setMapperClass(WordsByteMapper.class);
 			job.setMapOutputKeyClass(Text.class);
 			job.setMapOutputValueClass(Text.class);
