@@ -64,30 +64,29 @@ Following are the commands I needed to work with `hdfs` and `local file system` 
 
 ### How To Run Queries using SPARK
 
-1. As mentioned in the MapReduce part (1), you need to first copy your Country.dat and City.dat files to the `hadoop file system (hdfs)`.
-2. Spark queries can be made using different languages. We'll be using scala to query data from hive using spark. So first we need to create a table in which we'll be importing our `Country.dat` data. To start write `spark-shell` in your teminal.
-3. Once the shell is open, it will say  `scala>` like this on the left. Now you can create a table. I used the following query to create a table for Country.dat.
+* As mentioned in the MapReduce part (1), you need to first copy your Country.dat and City.dat files to the `hadoop file system (hdfs)`.
+* Spark queries can be made using different languages. We'll be using scala to query data from hive using spark. So first we need to create a table in which we'll be importing our `Country.dat` data. To start write `spark-shell` in your teminal.
+* Once the shell is open, it will say  `scala>` like this on the left. Now you can create a table. I used the following query to create a table for Country.dat.
 ```
 scala> sqlContext.sql("CREATE TABLE country(name string,lettercode string, state string,city string, countrycode int,population float) ROW FORMAT DELIMITED FIELDS TERMINATED BY '|' STORED AS TextFile")
 ```
-
-4. Once created you can simply import the data from Country.dat file into the table using the following query.
+* Once created you can simply import the data from Country.dat file into the table using the following query.
 ```
 scala> sqlContext.sql("LOAD DATA INPATH '/user/cloudera/Country.dat' OVERWRITE INTO TABLE country")
 ```
 Make sure that your file is inside the mentioned folder. `/user/cloudera` in this case.
 
-5. By default the environment will provide you with `HiveContext` as an `SqlContext`. You can check that by writing the following command. `sqlContext`. 
+* By default the environment will provide you with `HiveContext` as an `SqlContext`. You can check that by writing the following command. `sqlContext`. 
 
-6. Now we need to convert our table into a [DataFrame](http://spark.apache.org/docs/latest/sql-programming-guide.html#datasets-and-dataframes). We can do this using the following command.
+* Now we need to convert our table into a [DataFrame](http://spark.apache.org/docs/latest/sql-programming-guide.html#datasets-and-dataframes). We can do this using the following command.
 ```
 scala> val df = sqlContext.sql("select * from country")
 ```
-7. Now you can simply view all data using .
+* Now you can simply view all data using .
 ```
 scala> df.show()
 ```
-8. Or you can filter the data let's say we need the rows where population is greater than 200. So we'll write.
+* Or you can filter the data let's say we need the rows where population is greater than 200. So we'll write.
 ```
 scala> df.filter(df("population") > 200).show()
 ```
