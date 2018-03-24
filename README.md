@@ -98,7 +98,7 @@ For further help: Follow [these video tutorials](https://www.youtube.com/watch?v
 
 ## License
 ```
-Copyright 2016 Muazzam Ali
+Copyright © 2018 Muazzam Ali
 
 Licensed under the Apache License, Version 2.0 (the "License");
 you may not use this file except in compliance with the License.
